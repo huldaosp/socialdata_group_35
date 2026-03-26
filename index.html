@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>SF Crime Data</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     color: #222;
-    background-color: #fafafa;
+    background-color: #faf0e6;
     line-height: 1.7;
 }
 
@@ -18,6 +18,8 @@ body {
     max-width: 900px;
     margin: 25px auto 20px;
     padding: 0 15px;
+    position: relative;
+    border-top: 3px solid #ef4444;
 }
 
 .hero h1 {
@@ -29,22 +31,31 @@ body {
 .hero h2 {
     font-weight: 400;
     font-size: 15px;
-    color: #666;
+    color: #b91c1c;
 }
 
 /* Main text */
 .content {
-    max-width: 700px;
-    margin: 40px auto;
+    max-width: 900px;
+    margin: 20px auto;
     padding: 0 20px;
     font-size: 16px;
+    text-align: justify;
+}
+
+.content p,
+.figure-section p {
+    font-size: 17px;
+    line-height: 1.8;
 }
 
 /* Figure sections */
+
 .figure-section {
     max-width: 900px;
     margin: 80px auto;
     padding: 0 20px;
+    border-top: 1px solid #fca5a5; 
 }
 
 .figure-section h3 {
@@ -54,20 +65,40 @@ body {
 }
 
 .figure-section p {
-    max-width: 700px;
+    max-width: 850px;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .figure img {
     width: 100%;
     border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.figure img:hover {
+    transform: scale(1.01);
+}
+
+.figure-section a {
+    color: #b91c1c;
+    text-decoration: none;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.figure-section a:hover {
+    text-decoration: underline;
+    color: #7f1d1d;
 }
 
 .scroll-down {
-    display: block;
-    text-align: center;
-    margin: 20px 0 40px; /* higher up */
-    font-size: 32px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;   /* controls how high it sits */
+    
+    font-size: 40px;
     color: #999;
     text-decoration: none;
     animation: bounce 1.5s infinite;
@@ -101,6 +132,13 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+body > p {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 </style>
 </head>
@@ -139,24 +177,29 @@ html {
 
 
 <section id="fig1" class="figure-section">
-    <h3>Figure 1: Crime Trends Over Time</h3>
+    <h3> Drugs in San Francisco</h3>
     <p>
-        This figure shows how crime has developed over time across the selected categories. 
-        We observe overall trends and identify periods with notable increases or decreases.
+        When exploring the data, one crime category quickly stood out to us. We had heard about the drug crisis in San Francisco, especially related to fentanyl, and wanted to explore this more closely. This issue is often linked to challenges the city has been facing, including homelessness and public health concerns. But we wanted to understand it from the data: is this happening all over the city, or only in specific areas? Would we actually notice this if we visited SF?
+
+        On the following bar plot, we look at drug incidents by district relative to the citywide average. The value shown is a relative ratio: the share of incidents classified as drug-related within a district divided by the citywide share of drug-related incidents. A value of 1 means that a district matches the city average, while values above 1 indicate overrepresentation. Tenderloin reaches roughly 4.4, meaning that drug-related incidents make up a much larger share of recorded incidents there than they do across San Francisco overall. Most other districts are close to 1 or below, suggesting that drug-related incidents are not equally distributed across the city.
     </p>
     <div class="figure">
-        <iframe src="ratio_map_drug.html"
-                width="100%" height="500px"
-                style="border:none;">
-        </iframe>
+        <img src="drug_incidents.png">
     </div>
+
+    <p>
+        The results are quite striking. The Tenderloin district clearly stands out, with more than four times the city average, far higher than any other district.
+
+        What is also interesting is that most other districts are below the city average. Only a few, like Mission and Southern, are slightly above average, but still nowhere near the level of the Tenderloin. This shows that drug-related incidents are not evenly spread across the city, but are instead highly concentrated in specific areas.
+        The pattern may reflect not only underlying activity, but also differences in policing, enforcement, and reporting practices.
+        <a href="https://sfstandard.com/2026/02/05/san-francisco-fentanyl-decade/" target="_blank">(Source: SF Standard)</a>
+    </p>
 </section>
 
 <section class="figure-section">
-    <h3>Figure 2: Distribution by Crime Category</h3>
+    <h3>Heatmap</h3>
     <p>
-        This figure illustrates the distribution of crime across the selected categories. 
-        It highlights which types of crime are most common and how they compare.
+        This pattern is mostly driven by the Tenderloin, but we also see higher values in a couple of other districts. Are these areas close to each other? Are they part of the same part of the city? And how large are these places actually? Let’s take a closer look.
     </p>
     <div class="figure">
         <iframe src="ratio_map_drug.html"
@@ -164,20 +207,29 @@ html {
                 style="border:none;">
         </iframe>
     </div>
+    <p>
+        From the heatmap, we can see that the Tenderloin is actually a very small area compared to the size of the city. This means that many visitors, or even residents, might not notice this pattern in their daily lives unless they are in that specific area.
+
+        The color scale is capped at 2 to make it easier to compare most districts, since the Tenderloin is such an extreme outlier. Even with this cap, it clearly stands out.
+
+        We also see that nearby districts like Mission and Southern have somewhat higher values, suggesting that this is not completely isolated, but rather part of a broader central area. However, the Tenderloin remains by far the most concentrated hotspot.
+
+        Looking more closely at the Mission district, it does have dramatic increase of drug addicts on the streets, which supports our data.
+        <a href="https://abc7news.com/post/san-franciscos-16th-mission-streets-plagued-drugs-illegal-goods/16603359/" target="_blank">(Source: ABC7 News)</a>
+    </p>
 </section>
 
 <section class="figure-section">
-    <h3>Figure 3: Drug-Related Crime Patterns</h3>
+    <h3>Interactive</h3>
     <p>
-        This figure focuses specifically on drug-related crimes, showing the trends that motivated 
-        a deeper analysis of this category.
+        3. One interactive Plotly visualization**: this should contain different data than the exercises from Week 6. It's a plus if it's a different *type* of interactive viz altogether (not just another bar chart with the same structure). Export with `fig.write_html()`.
     </p>
-    <div class="figure">
-        <iframe src="ratio_map_drug.html"
+    <!-- <div class="figure">
+        <iframe src="fig3.html"
                 width="100%" height="500px"
                 style="border:none;">
         </iframe>
-    </div>
+    </div> -->
 </section>
 
 </body>
