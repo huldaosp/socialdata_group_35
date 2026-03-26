@@ -2,5 +2,172 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SF Crime Data</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #222;
+    background-color: #fafafa;
+    line-height: 1.7;
+}
+
+/* Title section (editorial style) */
+.hero {
+    max-width: 900px;
+    margin: 25px auto 20px;
+    padding: 0 15px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-weight: 400;
+    font-size: 15px;
+    color: #666;
+}
+
+/* Main text */
+.content {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+/* Figure sections */
+.figure-section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.figure-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.figure-section p {
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.figure img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.scroll-down {
+    display: block;
+    text-align: center;
+    margin: 20px 0 40px; /* higher up */
+    font-size: 32px;
+    color: #999;
+    text-decoration: none;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+}
+
+.scroll-down:hover {
+    color: #555;
+}
+
+.scroll-down span::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #888;
+    border-bottom: 2px solid #888;
+    transform: rotate(-45deg);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+</style>
+</head>
+
+<body>
+<p style="color:#888; margin:15px;">Group 23</p>
+<section class="hero">
+    <h1>San Francisco Crime Data</h1>
+    <h2>A data-driven exploration of crime patterns (2003–2025)</h2>
+</section>
+
+<section class="content">
+    <p>
+    This project explores patterns in San Francisco crime data over the past 20 years. Through interactive visualizations, we uncover trends across time, location, and crime type.
+    </p>
+
+    <p>
+        We use crime data from the years 2003 to 2025, obtained from two datasets provided by the San Francisco Police Department through DataSF. These datasets were merged into one, requiring several modifications.
+    </p>
+
+    <p>
+        Some crime categories were originally classified differently, and variables such as date formats needed to be standardized. After cleaning and preparing the data, we selected nine crime categories that were both relevant and consistent across datasets.
+    </p>
+
+    <p>
+        Through our analysis, we developed a strong understanding of the dataset and identified several interesting patterns. In particular, drug-related crimes stood out due to notable trends (xxx).
+    </p>
+
+    <p>
+        This report explores these findings in more depth, with a focus on uncovering meaningful insights from the data.
+    </p>
+</section>
+
+<a href="#fig1" class="scroll-down">↓</a>
+
+<section id="fig1" class="figure-section">
+    <h3>Figure 1: Crime Trends Over Time</h3>
+    <p>
+        This figure shows how crime has developed over time across the selected categories. 
+        We observe overall trends and identify periods with notable increases or decreases.
+    </p>
+    <div class="figure">
+        <img src="figure1.png" alt="Crime trends over time">
+    </div>
+</section>
+
+<section class="figure-section">
+    <h3>Figure 2: Distribution by Crime Category</h3>
+    <p>
+        This figure illustrates the distribution of crime across the selected categories. 
+        It highlights which types of crime are most common and how they compare.
+    </p>
+    <div class="figure">
+        <img src="figure2.png" alt="Crime categories distribution">
+    </div>
+</section>
+
+<section class="figure-section">
+    <h3>Figure 3: Drug-Related Crime Patterns</h3>
+    <p>
+        This figure focuses specifically on drug-related crimes, showing the trends that motivated 
+        a deeper analysis of this category.
+    </p>
+    <div class="figure">
+        <img src="figure3.png" alt="Drug-related crime trends">
+    </div>
+</section>
+
+</body>
+</html>
