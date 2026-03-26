@@ -220,16 +220,42 @@ body > p {
 </section>
 
 <section class="figure-section">
-    <h3>Interactive</h3>
+    <h3>Trends over time</h3>
     <p>
-        3. One interactive Plotly visualization**: this should contain different data than the exercises from Week 6. It's a plus if it's a different *type* of interactive viz altogether (not just another bar chart with the same structure). Export with `fig.write_html()`.
+        It is interesting to observe that drug incidents seem to cluster around the Tenderloin area. To understand this a bit better, 
+        we wanted to look at how things have changed over time.
+        Has Tenderloin always been the main hotspot for drug offenses or is this something that developed more recently?
+
+        To explore this, we plotted the number of drug offenses per year and broke them down by police district. 
+        We also included the city median as a reference point, to make comparison easier.
+
+        Since Tenderloin stands out as a high-incident area, we ranked the districts based on how close they were to Tenderloin.
+        You can both select specific districts, or choose to look at either the two or four districts closest to Tenderloin and compare them.
+        
+        <a href="https://drugabuse.com/featured/drug-arrests-across-america/">Drug arrests across America</a>
     </p>
-    <!-- <div class="figure">
-        <iframe src="fig3.html"
+    <iframe src="drug_over_time.html"
                 width="100%" height="500px"
                 style="border:none;">
         </iframe>
-    </div> -->
+
+    <p>
+        Looking at the data, Tenderloin clearly has the highest number of drug offenses, and that’s been consistent across the whole time period.
+
+        There’s a noticeable spike around 2008–2009, but more importantly, this is followed by a clear shift in the trend. 
+        From what we found, this change seems to be closely tied to shifts in law enforcement priorities.
+
+        In 2010, California changed the law so that possession of small amounts of marijuana became an infraction rather than a misdemeanor. 
+        Around the same time, policing efforts appear to have shifted as well. 
+        After this, drug arrests in San Francisco and the Bay Area dropped significantly, by around 75% over the following years. 
+        This is clearly reflected in the data, where we see a sharp decline after 2009.<a href="https://drugabuse.com/featured/drug-arrests-across-america/">Source:DrugAbuse.com</a>
+
+        Another interesting point is the drop in 2017, where the number of offenses comes close to the city median. 
+        Digging a bit deeper, it seems that around 2018–2019 the police were focusing more on investigating larger drug networks instead of making street-level arrests. 
+        This could help explain the dip—fewer arrests doesn’t necessarily mean less activity, but rather a shift in focus. <a href="https://www.cbsnews.com/sanfrancisco/news/crime-feds-crackdown-san-franciscos-tenderloin-drugs/">Source:CBS News</a>
+
+        Finally, like we saw earlier, there’s a clear pattern across districts: areas closer to Tenderloin tend to have higher numbers of drug offenses than those farther away.
+    </p>
 </section>
 
 </body>
