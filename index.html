@@ -156,7 +156,7 @@ body > p {
     </p>
 
     <p>
-        We use crime data from the years 2003 to 2025, obtained from two datasets provided by the San Francisco Police Department through DataSF. These datasets were merged into one, requiring several modifications.
+        Our analysis is based on crime data from 2003 to 2025, drawn from two datasets published by the San Francisco Police Department through DataSF. These datasets were merged into one, requiring several modifications.
     </p>
 
     <p>
@@ -179,7 +179,7 @@ body > p {
 <section id="fig1" class="figure-section">
     <h3> Drugs in San Francisco</h3>
     <p>
-        When exploring the data, one crime category quickly stood out to us. We had heard about the drug crisis in San Francisco, especially related to fentanyl, and wanted to explore this more closely. This issue is often linked to challenges the city has been facing, including homelessness and public health concerns. But we wanted to understand it from the data: is this happening all over the city, or only in specific areas? Would we actually notice this if we visited SF?
+        When exploring the data, one crime category quickly stood out to us. We had heard about the drug crisis in San Francisco, especially related to fentanyl, and wanted to explore this more closely. This issue is often linked to challenges the city has been facing, including homelessness and public health concerns. But we wanted to understand it from the data: is this happening all over the city, or only in specific areas?
 
         On the following bar plot, we look at drug incidents by district relative to the citywide average. The value shown is a relative ratio: the share of incidents classified as drug-related within a district divided by the citywide share of drug-related incidents. A value of 1 means that a district matches the city average, while values above 1 indicate overrepresentation. Tenderloin reaches roughly 4.4, meaning that drug-related incidents make up a much larger share of recorded incidents there than they do across San Francisco overall. Most other districts are close to 1 or below, suggesting that drug-related incidents are not equally distributed across the city.
     </p>
@@ -187,19 +187,19 @@ body > p {
         <img src="drug_incidents.png">
     </div>
 
-    <p>
+     <p>
         The results are quite striking. The Tenderloin district clearly stands out, with more than four times the city average, far higher than any other district.
 
         What is also interesting is that most other districts are below the city average. Only a few, like Mission and Southern, are slightly above average, but still nowhere near the level of the Tenderloin. This shows that drug-related incidents are not evenly spread across the city, but are instead highly concentrated in specific areas.
-        The pattern may reflect not only underlying activity, but also differences in policing, enforcement, and reporting practices.
-        <a href="https://sfstandard.com/2026/02/05/san-francisco-fentanyl-decade/" target="_blank">(Source: SF Standard)</a>
+        Local reporting on San Francisco’s fentanyl crisis suggests that Tenderloin has remained one of the city’s most visible drug-related hotspots. At the same time, the pattern may reflect not only underlying activity, but also differences in policing, enforcement, and reporting practices.
+    <a href="https://sfstandard.com/2026/02/05/san-francisco-fentanyl-decade/" target="_blank">(Source: SF Standard)</a>        <a href="https://sfstandard.com/2026/02/05/san-francisco-fentanyl-decade/" target="_blank">(Source: SF Standard)</a>
     </p>
 </section>
 
 <section class="figure-section">
     <h3>Heatmap</h3>
-    <p>
-        This pattern is mostly driven by the Tenderloin, but we also see higher values in a couple of other districts. Are these areas close to each other? Are they part of the same part of the city? And how large are these places actually? Let’s take a closer look.
+    <p>    
+    The bar chart shows that drug-related incidents are not evenly distributed across San Francisco, and that the Tenderloin stands out as a clear outlier. But we also see higher values in a couple of other districts. The figure alone does not show how these districts relate to each other geographically. To understand whether this concentration is in a isolated space or part of a broader spatial pattern, we now turn to the map.
     </p>
     <div class="figure">
         <iframe src="ratio_map_drug.html"
@@ -207,15 +207,15 @@ body > p {
                 style="border:none;">
         </iframe>
     </div>
-    <p>
+<p>
         From the heatmap, we can see that the Tenderloin is actually a very small area compared to the size of the city. This means that many visitors, or even residents, might not notice this pattern in their daily lives unless they are in that specific area.
 
-        The color scale is capped at 2 to make it easier to compare most districts, since the Tenderloin is such an extreme outlier. Even with this cap, it clearly stands out.
+        Darker shades on the map represent a higher drug ratio, meaning that drug-related incidents make up a larger share of recorded incidents in that district than they do citywide. The color scale is capped at 2 to make it easier to compare most districts, since the Tenderloin is such an extreme outlier. Even with this cap, it clearly stands out.
 
-        We also see that nearby districts like Mission and Southern have somewhat higher values, suggesting that this is not completely isolated, but rather part of a broader central area. However, the Tenderloin remains by far the most concentrated hotspot.
-
-        Looking more closely at the Mission district, it does have dramatic increase of drug addicts on the streets, which supports our data.
+        Nearby districts such as Mission and Southern are somewhat elevated as well, pointing to a broader central concentration and suggesting that this is not completely isolated to Tenderloin. This interpretation is supported by local reporting from ABC7, which described 16th and Mission as a visible hotspot for both drug activity and illegal street vending, and reported that police had observed part of the drug scene shifting into Mission.
+        However, Tenderloin remains by far the most concentrated hotspot according to the data.
         <a href="https://abc7news.com/post/san-franciscos-16th-mission-streets-plagued-drugs-illegal-goods/16603359/" target="_blank">(Source: ABC7 News)</a>
+        
     </p>
 </section>
 
